@@ -73,15 +73,11 @@ In this task I will explain how I did the following:
 
 
 **The following codes is to check roscore runs:** 
--	roscore
-
-
-**New terminal:**
--       
+-	roscore 
 -	rosenode list 
 -	rosetopic list 
 
-	Download arduino_robot_arm package from S-M GitHub: 
+Download arduino_robot_arm package from S-M GitHub: 
 -	cd ~/catkin_ws/src
 -	sudo apt install git
 -	git clone https://github.com/smart-methods/arduino_robot_arm 
@@ -99,11 +95,11 @@ In this task I will explain how I did the following:
 -	sudo nano ~/.bashrc
 
 
-**At the end of the (bashrc) file I add follwing line: **
+**At the end of the (bashrc) file I add follwing line:**
 -	(source /home/maryam/catkin_ws/devel/setup.bash)
 
 
-**Then ctrl + o then press Enter, then ctrl + x **
+**Then ctrl + o then press Enter, then ctrl + x**
 -	source ~/.bashrc
 -	roslaunch robot_arm_pkg check_motors.launch
 
@@ -118,7 +114,7 @@ In this task I will explain how I did the following:
 **Download Arduino IDE Linux Version 64-bits inside the Ubuntu 18.04 and followed the   installation steps from the link: https://www.arduino.cc/en/software**
 
 
-**Arduino IDE Setup on Ubuntu + download libraries were downloaded from the source because the installing the binary didn’t work with me, so I used the following codes: **
+**Arduino IDE Setup on Ubuntu + download libraries were downloaded from the source because the installing the binary didn’t work with me, so I used the following codes:**
 -	cd ~/catkin_ws 
 -	cd src 
 -	git clone https://github.com/ros-drivers/rosserial.git
@@ -144,8 +140,7 @@ In this task I will explain how I did the following:
 -	rosrun rosserial_arduino make_libraries.py .
 
 
-**Restart Arduino and restart Ubuntu then ros_lib appeared on Arduino. **
-
+**Restart Arduino and restart Ubuntu then ros_lib appeared on Arduino.**
 
 **Controlling the motors in simulation between Gazebo & RIVZ:**
 -	roslaunch robot_arm_pkg check_motors.launch
@@ -153,21 +148,21 @@ In this task I will explain how I did the following:
 -	rosrun robot_arm_pkg joint_states_to_gazebo.py
 
 
-**To change the permission **
+**To change the permission**
 -	cd catkin/src/arduino_robot_arm/robot_arm_pkg/scripts
 -	sudo chmod +x joint_states_to_gazebo.py
 
 
-**error “ [Err] [REST.cc:205] Error in REST request “ appeared so I fixed it following this tutorial https://youtu.be/ftDz_EVoatw **
+**error “ [Err] [REST.cc:205] Error in REST request “ appeared so I fixed it following this tutorial https://youtu.be/ftDz_EVoatw**
 -	basically api.ignitionfuel caused the error. so, I replaced it with api.ignitionrobotics and the error stopped occurring 
 
 
-**Download MoveIt **
+**Download MoveIt**
 -	roslaunch moveit_setup_assistant setup_assistant.launch
 -	roslaunch moveit_pkg demo.launch
 
 
-**Finally, to opened RVIZ and Gazebo and Controlling the motors in simulation I tried those following codes and it worked! **
+**Finally, to opened RVIZ and Gazebo and Controlling the motors in simulation I tried those following codes and it worked!**
 -	roslaunch robot_arm_pkg check_motors.launch
 -	roslaunch robot_arm_pkg check_motors_gazebo.launch
 -	rosrun robot_arm_pkg joint_states_to_gazebo.py
