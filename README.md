@@ -1,7 +1,8 @@
 # AI_Robotics_Task_1
 
 1’st Main Task in AI & Robotics.
-Note: download the attached video to be able to view it. 
+
+Note: download the attached video to be able to view the results. 
 
 **Brief Description:**
 In this task I will explain how I did the following:
